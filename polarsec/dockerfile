@@ -4,6 +4,9 @@ WORKDIR /usr/src/app
 
 COPY package*.json .
 
+# Install TypeScript globally
+RUN npm install -g typescript
+
 RUN npm install
 
 COPY . .
