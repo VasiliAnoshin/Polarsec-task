@@ -1,0 +1,26 @@
+FROM node:18-slim as developmnet
+
+WORKDIR /usr/src/app
+
+COPY package*.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+FROM node:18-slim as production
+
+WORKDIR /usr/src/app
+
+COPY package*.json .
+
+RUN npm ci --only=production
+
+COPY --from=developmnet /usr/src/app/dist ./dist
+
+# Expose port 9001 to the outside world
+EXPOSE 9001
+
+CMD ["node", "dist/index.js"]
