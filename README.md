@@ -1,11 +1,11 @@
 # Polarsec-task
 ## Part2:
-1. Horizontal Scaling with Load Balancing.
+1. Horizontal Scaling with Load Balancing. <br/>
 Distribute the load across multiple instances of your application running on separate servers.
 - Containerize your Application
 - Deploy Multiple Instances
 - Implement Load Balancing
-2. Rate Limiting
+2. Rate Limiting <br/>
 Allow a certain number of requests within a specific time window (e.g., 10 requests per minute).
 
 ## How to run:
